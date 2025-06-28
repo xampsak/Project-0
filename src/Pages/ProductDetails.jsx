@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCart } from "../Pages/CartContext"; // ✅ Make sure path is correct
-import Footer from "../components/Footer"; // ✅ Adjust if path differs
+import Footer from "../Components/Footer"; // ✅ Adjust if path differs
 
 // Dummy product data
 const productData = {
