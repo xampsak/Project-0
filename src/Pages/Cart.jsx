@@ -1,6 +1,6 @@
 import React from "react";
 import { useCart } from "./CartContext";
-import Footer from "../components/Footer";
+import Footer from "../Components/Footer";
 
 function Cart() {
   const { cart, removeFromCart } = useCart();
