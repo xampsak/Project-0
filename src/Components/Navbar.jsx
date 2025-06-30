@@ -5,9 +5,10 @@ import {
   FaTimes,
   FaSearch,
   FaUser,
-} from "react-icons/fa"; // removed FaShoppingBag
+  FaShoppingBag,
+} from "react-icons/fa";
 import logos from "/logo.png";
-import red from "/59.png"; // ✅ custom cart image
+import red from "/59.png";
 import { useCart } from "../Pages/CartContext";
 
 const Navbar = () => {
@@ -80,8 +81,9 @@ const Navbar = () => {
             <Link to="/login">
               <FaUser className="cursor-pointer hover:text-black" />
             </Link>
-
-            {/* ✅ Image as Cart Icon */}
+            <Link to="/admin">
+              <FaShoppingBag className="cursor-pointer hover:text-black" />
+            </Link>
             <Link to="/cart" className="relative">
               <img
                 src={red}
@@ -153,7 +155,9 @@ const Navbar = () => {
               <Link to="/login">
                 <FaUser className="text-xl cursor-pointer" />
               </Link>
-              {/* ✅ Mobile Cart Icon as Image */}
+              <Link to="/admin">
+                <FaShoppingBag className="text-xl cursor-pointer" />
+              </Link>
               <Link to="/cart" className="relative">
                 <img
                   src={red}
