@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import red from '/59.png';
-
 import {
   FaBars,
   FaTimes,
