@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import red from '/59.png';
+
 import {
   FaBars,
   FaTimes,
   FaSearch,
   FaUser,
-  FaShoppingBag,
-} from "react-icons/fa";
+} from "react-icons/fa"; // removed FaShoppingBag
 import logos from "/logo.png";
-import { useCart } from "../Pages/CartContext"; // adjust the path if needed
+import red from "/59.png"; // ✅ custom cart image
+import { useCart } from "../Pages/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const { cart } = useCart(); // Access cart from context
+  const { cart } = useCart();
 
   const handleSearch = () => {
     if (searchQuery.trim() !== "") {
@@ -80,26 +82,14 @@ const Navbar = () => {
             <Link to="/login">
               <FaUser className="cursor-pointer hover:text-black" />
             </Link>
-            <Link to="/admin">
-              <FaShoppingBag className="cursor-pointer hover:text-black" />
-            </Link>
 
-            {/* Cart Icon with Badge */}
+            {/* ✅ Image as Cart Icon */}
             <Link to="/cart" className="relative">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 cursor-pointer hover:text-black"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 8h14l-1.5 12.5H6.5L5 8zm4 0V5a3 3 0 116 0v3"
-                />
-              </svg>
+              <img
+                src={red}
+                alt="Cart"
+                className="h-6 w-6 object-contain cursor-pointer"
+              />
               {cart.length > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                   {cart.length}
@@ -165,24 +155,13 @@ const Navbar = () => {
               <Link to="/login">
                 <FaUser className="text-xl cursor-pointer" />
               </Link>
-              <Link to="/admin">
-                <FaShoppingBag className="text-xl cursor-pointer" />
-              </Link>
+              {/* ✅ Mobile Cart Icon as Image */}
               <Link to="/cart" className="relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 cursor-pointer hover:text-black"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 8h14l-1.5 12.5H6.5L5 8zm4 0V5a3 3 0 116 0v3"
-                  />
-                </svg>
+                <img
+                  src={red}
+                  alt="Cart"
+                  className="h-6 w-6 object-contain cursor-pointer"
+                />
                 {cart.length > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                     {cart.length}
