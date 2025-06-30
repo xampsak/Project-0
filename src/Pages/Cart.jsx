@@ -19,7 +19,7 @@ function Cart() {
               key={index}
               className="flex items-center justify-between bg-white rounded-lg shadow p-4"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 object-cover object-top">
                 <img src={item.img} alt={item.title} className="w-24 h-24 object-cover rounded" />
                 <div>
                   <h2 className="font-bold">{item.title}</h2>
